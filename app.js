@@ -18,8 +18,8 @@ connect.then((db)=>{
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
-let productsRouter = require('./routes/product');
-let ordersRouter = require('./routes/orders')
+let productsRouter = require('./module/product/route/product');
+let ordersRouter = require('./module/order/route/orders')
 
 
 var app = express();

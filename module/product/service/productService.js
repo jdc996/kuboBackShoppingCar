@@ -1,4 +1,4 @@
-const productModel = require('../modules/products');
+const productModel = require('../model/products');
 
 
 let productService = {
@@ -15,7 +15,7 @@ let productService = {
        
     },
     postProduct : async(product)=>{
-        
+
             res = await productModel.insertMany(product)
             return res
  

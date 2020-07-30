@@ -1,5 +1,5 @@
-const orderModel = require('../modules/orders');
-const productModel = require('../modules/products')
+const orderModel = require('../model/orders');
+const productModel = require('../../product/model/products')
 
 let orderService = {
     postOrders : async(order)=>{
