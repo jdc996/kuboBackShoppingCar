@@ -4,8 +4,10 @@ let orderController = {
 
     postOrder : async(req,res,next)=>{
         try {
-            await orderService.postOrders(req.body)
+            let order = await orderService.postOrders(req.body)
+            res.status(201).send(order)
         } catch (error) {
+            //res.status(error.status).send(error.message)
             next(error)
         }
     }

@@ -3,8 +3,8 @@ const productModel = require('../model/products');
 
 let productService = {
 
-    getProducts : async()=>{
-        let products = await productModel.find({})
+    getProducts : async(query,options)=>{
+        let products = await productModel.paginate(query,options)
         return products
     },
 

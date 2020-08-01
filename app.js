@@ -3,18 +3,12 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let errorHandler= require('./error-handler/error-handler')
 
-const mongoose = require('mongoose');
-const url = "mongodb://localhost:27017/kuboServer"
 
-const connect = mongoose.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true })
+const mongoose = require('./db');
 
-connect.then((db)=>{
-  console.log("Conexion exitosa con la base")
-})
-.catch((err)=>{
-  console.log("Error en la conexion :",err)
-})
+
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
@@ -40,20 +34,10 @@ app.use('/products',productsRouter)
 app.use('/orders',ordersRouter)
 
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+app.use(async (err, req, res, next) => {
+  const type = await errorHandler.handleError(err);
+  return res.status(type.statusCode).send(type);
 });
 
 module.exports = app;
