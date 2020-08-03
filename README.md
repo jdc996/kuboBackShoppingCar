@@ -24,5 +24,63 @@ El programa esta desarrollado en node, exponiendo los servicios:
 - GET "products/categories/all" listar todas las categorias de los productos
 - POST "/orders/" guardar la factura u orden de compra con el total de la compra y los productos
 
+Modelo de un producto :
+```json
+image : {
+        type : String,
+        required : true,
+        url : [String],
+    },
+    name : {
+        type : String,
+        required : true,
+    },
+    description : {
+        type : String,
+        required : true
+    },
+    price : {
+        type : Number,
+        required : true,
+        min : 0
+    },
+    inventory : {
+        type : Number,
+        required : true,
+        min : 0
+    },
+    category : {
+        type : String,
+        required : true,
+        default : ''
+    }
+}
+```
+Modelo de una orden : 
+```json
+    products : [{
 
+        _id : {
+            type : mongoose.Types.ObjectId
+        },
+        
+        name : {
+            type : String,
+            required: true
+        },
+
+        quantity : {
+            type : Number,
+            required : true,
+            min : 1
+        }
+    }],
+
+    totalPrice : {
+        type : Number,
+        min : 0
+    }
+
+}  
+```
 
