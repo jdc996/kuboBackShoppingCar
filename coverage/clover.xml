@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1596303454180" clover="3.2.0">
-  <project timestamp="1596303454180" name="All files">
-    <metrics statements="134" coveredstatements="133" conditionals="23" coveredconditionals="21" methods="19" coveredmethods="18" elements="176" coveredelements="172" complexity="0" loc="134" ncloc="134" packages="11" files="12" classes="12"/>
+<coverage generated="1596471771949" clover="3.2.0">
+  <project timestamp="1596471771949" name="All files">
+    <metrics statements="145" coveredstatements="143" conditionals="23" coveredconditionals="21" methods="22" coveredmethods="21" elements="190" coveredelements="185" complexity="0" loc="145" ncloc="145" packages="11" files="12" classes="12"/>
     <package name="kuboShoppingCarBackend">
-      <metrics statements="28" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="33" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="app.js" path="/home/juan/Documentos/kuboShoppingCarBackend/app.js">
-        <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="28" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="40" count="4" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
+        <line num="29" count="14" type="stmt"/>
+        <line num="30" count="14" type="stmt"/>
+        <line num="31" count="14" type="stmt"/>
+        <line num="32" count="14" type="stmt"/>
+        <line num="33" count="14" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="46" count="4" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
       </file>
       <file name="db.js" path="/home/juan/Documentos/kuboShoppingCarBackend/db.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -143,9 +148,9 @@
       </file>
     </package>
     <package name="kuboShoppingCarBackend.module.product.controller">
-      <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="9" methods="2" coveredmethods="2"/>
+      <metrics statements="21" coveredstatements="20" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3"/>
       <file name="productController.js" path="/home/juan/Documentos/kuboShoppingCarBackend/module/product/controller/productController.js">
-        <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="9" methods="2" coveredmethods="2"/>
+        <metrics statements="21" coveredstatements="20" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
@@ -162,7 +167,11 @@
         <line num="29" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
       </file>
     </package>
     <package name="kuboShoppingCarBackend.module.product.model">
@@ -179,9 +188,9 @@
       </file>
     </package>
     <package name="kuboShoppingCarBackend.module.product.route">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="product.js" path="/home/juan/Documentos/kuboShoppingCarBackend/module/product/route/product.js">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -190,19 +199,21 @@
         <line num="8" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
       </file>
     </package>
     <package name="kuboShoppingCarBackend.module.product.service">
-      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="productService.js" path="/home/juan/Documentos/kuboShoppingCarBackend/module/product/service/productService.js">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="7" count="4" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
       </file>
     </package>
   </project>
