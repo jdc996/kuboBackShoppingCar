@@ -26,61 +26,27 @@ El programa esta desarrollado en node, exponiendo los servicios:
 
 Modelo de un producto :
 ```json
-image : {
-        type : String,
-        required : true,
-        url : [String],
-    },
-    name : {
-        type : String,
-        required : true,
-    },
-    description : {
-        type : String,
-        required : true
-    },
-    price : {
-        type : Number,
-        required : true,
-        min : 0
-    },
-    inventory : {
-        type : Number,
-        required : true,
-        min : 0
-    },
-    category : {
-        type : String,
-        required : true,
-        default : ''
-    }
+{
+"image" : "urlimage",
+"name" : "Nombre Producto",
+"description" : "Descripcion Producto",
+"price" : 200,
+"inventory" : 20,
+"category" : "Tecnologia"
 }
 ```
 Modelo de una orden : 
 ```json
-    products : [{
+    "products" : [{
 
-        _id : {
-            type : mongoose.Types.ObjectId
-        },
+        "_id" : "idProducto",
         
-        name : {
-            type : String,
-            required: true
-        },
+        "name" : "nobreProducto",
 
-        quantity : {
-            type : Number,
-            required : true,
-            min : 1
-        }
+        "quantity" : 2
     }],
 
-    totalPrice : {
-        type : Number,
-        min : 0
-    }
-
+    "totalPrice" : 10
 }  
 ```
 
