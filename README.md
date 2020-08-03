@@ -2,7 +2,11 @@
 Backend de carrito de compras para la pruba practica de Kubo
 
 ##Instalacion
-*Tener instalado `node`
+*Tener instalado `node` y `Docker compose`
+*Correr docker compose
+```
+docker-compose up -d
+```
 * Instalar dependencias node
 ```bash
 npm install
