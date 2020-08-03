@@ -37,10 +37,26 @@ describe("post new order", () => {
 
     })
 
+    test('return empty order',async()=>{
+        const res = await requestTest(app)
+        .post("/orders/")
+        .send({});
+        expect(res.status).toBe(400);
+        expect(res.body.message).toBe("Orden Vacia");
+    })
+
+    test('return No products in the order',async()=>{
+        const res = await requestTest(app)
+        .post("/orders/")
+        .send({"products":[]});
+        expect(res.status).toBe(400);
+        expect(res.body.message).toBe("No hay productors en la orden");
+    })
+
     test('return new order', async () => {
         const res = await requestTest(app)
             .post("/orders/")
-            .send({ "products": [{ "productId": orderProduct._id, "productName": orderProduct.name, "quantity": 1 }] })
+            .send({ "products": [{ "_id": orderProduct._id, "name": orderProduct.name, "quantity": 1 }] })
         expect(res.status).toBe(201);
         expect(res.body).not.toBeNull();
     })
@@ -48,7 +64,7 @@ describe("post new order", () => {
     test('return new order with a total price of 30', async () => {
         const res = await requestTest(app)
             .post("/orders/")
-            .send({ "products": [{ "productId": orderProduct._id, "productName": orderProduct.name, "quantity": 3 }] });
+            .send({ "products": [{ "_id": orderProduct._id, "name": orderProduct.name, "quantity": 3 }] });
         expect(res.status).toBe(201);
         expect(res.body.totalPrice).toBe(30)
     })
@@ -56,7 +72,7 @@ describe("post new order", () => {
     test('return product dont have enought inventory', async () => {
         const res = await requestTest(app)
             .post("/orders/")
-            .send({ "products": [{ "productId": produtcOutStock._id, "productName": produtcOutStock.name, "quantity": 3 }] });
+            .send({ "products": [{ "_id": produtcOutStock._id, "name": produtcOutStock.name, "quantity": 3 }] });
         expect(res.status).toBe(400);
         expect(res.body.message).toBe(`La cantidad de compra del producto "${produtcOutStock.name}" supera la cantidad en el inventarios`);
     })
@@ -64,7 +80,7 @@ describe("post new order", () => {
     test('return Error product not found in the database', async () => {
         const res = await requestTest(app)
             .post("/orders/")
-            .send({ "products": [{ "productId": '000000000000000000000000', "productName": " ", "quantity": 3 }] });
+            .send({ "products": [{ "_id": '000000000000000000000000', "name": " ", "quantity": 3 }] });
         expect(res.status).toBe(400);
         expect(res.body.message).toBe('los productos no se encuentran en la base');
     })
@@ -72,9 +88,8 @@ describe("post new order", () => {
     test('return Update the inventory of the product to 5', async () => {
         const res = await requestTest(app)
             .post("/orders/")
-            .send({ "products": [{ "productId": productInventoryUpdate._id, "productName": productInventoryUpdate.name, "quantity": 5 }] })
+            .send({ "products": [{ "_id": productInventoryUpdate._id, "name": productInventoryUpdate.name, "quantity": 5 }] })
         const product = await ProductModel.findById({ _id: productInventoryUpdate._id });
-        console.log("product inventory: ", product.inventory)
         expect(product.inventory).toBe(5);
     })
 

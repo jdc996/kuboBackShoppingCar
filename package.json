@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "MONGO_URL=mongodb://0.0.0.0:27017/kuboServer-test jest --forceExit --verbose"
+    "test": "MONGO_URL=mongodb://0.0.0.0:27017/kuboServer-test jest --forceExit --verbose",
+    "coverage" : "MONGO_URL=mongodb://0.0.0.0:27017/kuboServer-test jest --coverage --forceExit && opener coverage/lcov-report/index.html"
   },
   "dependencies": {
     "@hapi/boom": "^9.1.0",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "jest": "^26.2.1",
+    "opener": "^1.5.1",
     "supertest": "^4.0.2"
   }
 }

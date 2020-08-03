@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 const orderModel = require('../model/orders');
-const productModel = require('../../product/model/products');
+const { isEmpty } = require('lodash');
 
 let orderService = {
-    postOrders: async (order) => {
-        ("entro a servicio")
-
-        if (!order || order.products.length <= 0) {
-            //error orden vacia
-            throw new Error("orden Vacia")
+    postOrders: async (order) => {        
+        if (!order ||  isEmpty(order)){
+            throw new Error("Orden Vacia")    
+        } else if(order.products.length <= 0){
+            throw new Error("No hay productors en la orden")    
         }
         return await orderModel.create(order)
     }

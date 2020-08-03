@@ -7,9 +7,12 @@ productRouter.use(bodyParser.json())
 
 productRouter.route("/")
 .get(controller.getProducts)
-.post(controller.postProduct)
+
 
 productRouter.route("/:productId")
 .get(controller.getOneProduct)
+
+productRouter.route("/categories/all")
+.get(controller.getCategories)
 
 module.exports = productRouter;

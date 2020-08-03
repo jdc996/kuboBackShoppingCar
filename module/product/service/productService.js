@@ -11,14 +11,11 @@ let productService = {
     getProductById : async(id)=>{
 
             let product = await productModel.findById(id)
-            return product
-       
+            return product  
     },
-    postProduct : async(product)=>{
 
-            res = await productModel.insertMany(product)
-            return res
- 
+    getCategories : async()=>{
+        return await productModel.distinct("category")
     }
 
 }

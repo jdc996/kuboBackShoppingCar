@@ -9,11 +9,11 @@ const paginate = require('mongoose-paginate-v2');
 var orderSchema = new Schema({
     products : [{
 
-        productId : {
+        _id : {
             type : mongoose.Types.ObjectId
         },
         
-        productName : {
+        name : {
             type : String,
             required: true
         },
@@ -38,7 +38,7 @@ orderSchema.plugin(paginate);
 
 orderSchema.pre('save',async function(){
     let doc=this
-    let ids = doc.products.map(p=>p.productId.toString());
+    let ids = doc.products.map(p=>p._id.toString());
     let products= await productModel.find({'_id':{$in: ids}})
     let diferencia = lodash.difference(ids,products.map(p => p._id.toString()))
     if(diferencia.length !== 0 ){
@@ -47,7 +47,7 @@ orderSchema.pre('save',async function(){
     let pUpdate = []
     let precio = 0
     doc.products.forEach(p => {
-        let product = products.find(i => i._id.toString() === p.productId.toString());
+        let product = products.find(i => i._id.toString() === p._id.toString());
         product.inventory -= p.quantity;
         
         precio += p.quantity*product.price
