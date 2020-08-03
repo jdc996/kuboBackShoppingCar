@@ -16,6 +16,7 @@ npm run test
 ```bash
 npm run coverage
 ```
+![coverage test](https://kubo-shopping-car-assets.s3.amazonaws.com/images/Screenshot_2020-08-03+Code+coverage+report+for+All+files.png)
 
 ##Desarrollo
 El programa esta desarrollado en node, exponiendo los servicios:
