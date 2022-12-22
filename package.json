@@ -26,7 +26,7 @@
   "devDependencies": {
     "jest": "^26.2.1",
     "opener": "^1.5.1",
-    "serverless-offline": "^6.5.0",
+    "serverless-offline": "^12.0.3",
     "supertest": "^4.0.2"
   }
 }
